@@ -1,0 +1,37 @@
+body{
+    background-image:url("main2.jpg");
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    padding: 15% 24%;
+        
+}
+.container{
+   
+}
+
+h1{
+    background-color: #00000040;
+    color: rgb(184, 230, 249);
+    text-shadow: 2px 2px 4px #000000;
+    font-size: 200%;
+    padding: 2% 3%;
+
+}
+a:link, a:visited {
+    background-color: rgb(184, 230, 249);
+    color: rgb(41, 41, 41);
+    padding: 14px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    float: left;
+    margin: 0% 13% 10% 13% ;
+    min-width: 105px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  }
+  
+  a:hover, a:active {
+    background-color: rgb(167, 217, 238);
+    box-shadow: 0 7px 14px 0 rgba(0, 0, 0, 0.2), 0 10px 26px rgba(0, 0, 0, 0.19);
+  }

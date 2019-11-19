@@ -1,24 +1,52 @@
-const express = require("express");
-const bodyParser = require("body-parser");
+const express = require('express');
+const bodyParser = require('body-parser');
+const cookieParser = require('cookie-parser');
 
-//start express app
 const app = express();
-
-// view engine
-app.set("view engine", "ejs");
-app.use(bodyParser.urlencoded({ extended: false }));
-app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: false}));
 app.use(cookieParser());
 
-// middeware
+app.set('view engine', 'ejs');
+
+//middleware
 app.use(express.static("./public"));
 
-const mainRoutes = require('./routes');
-app.use(mainRoutes);
-//routs
+app.get('/', (req, res) => {
+    const name = req.cookies.username;
+    if (name) {
+      res.render('welcome', { name });
+    } else {
+      res.redirect('/singIn');
+    }
+});
 
+app.get('/singIn', (req, res) => {
+  const name = req.cookies.username;
+  if (name) {
+    res.redirect('/');
+  } else {
+    res.render('sing-in');
+  }
+});
 
-  app.listen(3004, function(err) {
-    if (err) console.log(err);
-    console.log("my server is running now");
-  });
+app.post('/singIn', (req, res) => {
+  res.cookie('username', req.body.username);
+  res.redirect('/');
+});
+
+app.post('/goodbye', (req, res) => {
+  res.clearCookie('username');
+  res.redirect('/singIn');
+});
+
+app.get('/recipes', function (req, res) {
+  res.render('recipes.ejs');
+  
+});
+app.get('/forms', function (req, res) {
+  res.render('forms.ejs');
+});
+
+app.listen(3000, () => {
+   console.log('The application is running on localhost:3000!')
+});
