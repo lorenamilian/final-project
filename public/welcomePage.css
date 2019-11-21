@@ -2,12 +2,13 @@ body{
     text-align: center;
     margin: 0%;
 }
-  h2{
-      font-size: 250%;
-      margin-top: 0;
-      padding-top: 0;
-      
+  .h2{
+     font-size: 200%;
+     color: rgb(255, 255, 255);
+     text-align: center;
+     padding-top: 0; 
   }
+ 
 
 button{
 float: right;
@@ -25,36 +26,33 @@ margin: 5px 20px 0px  ;
     color: rgb(255, 255, 255);
   }
 
-
-.logo{
-    width: 30%;
-    margin-top: 3%;
-}
 .ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
   overflow: hidden;
-  background-color: rgba(119, 120, 130, 0.26);
+  background-color: rgba(114, 221, 198, 0.863);
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  opacity: 0.6;
   
 }
 
-.li {
+#li {
   float: right;
   width: 15%;
 }
 
-.li a {
+#li a {
   display: block;
-  color: rgb(53, 53, 53);
+  color: rgb(0, 0, 0);
   text-align: center;
-  padding: 14px 36px;
+  padding: 5% 15%;
   text-decoration: none;
   margin: 0 8%;
+  font-size: 120%;
 }
 
-.li a:hover:not(.active) {
+#li a:hover:not(.active) {
   
 }
 
@@ -63,11 +61,125 @@ margin: 5px 20px 0px  ;
 } 
 
 .quote1{
-  padding: 0% 0% 40% ;
-  background-image: url("quote1.jpg") ;
+  padding: 0% 0% 20% ;
+  background-image: url("background.jpg") ;
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
   text-align: left;
 
+}
+ul{
+  list-style-type: none;
+  margin: auto;
+  
+}
+.button, .button:visited {
+  background-color: rgba(95, 185, 166, 0.76);
+  color: white;
+  padding: 14px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  float: left;
+  margin:5% 5% 10% 5%;
+  min-width: 105px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.button:hover, .button:active {
+  background-color: rgba(114, 221, 198, 0.76);
+  box-shadow: 0 7px 14px 0 rgba(0, 0, 0, 0.2), 0 10px 26px rgba(0, 0, 0, 0.19);
+}
+.welcome{
+  text-align: center;
+  padding: 3% 2% 2%;
+  color: rgb(255, 255, 255);
+  font-size: 320%;
+}
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+  width: 30%;
+  margin: 2%;
+}
+
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+.container {
+  padding: 2px 16px;
+}
+.all-cards{
+  display: flex;
+}
+
+  .icon-link{
+    max-width: 100%;
+    margin-right: 30px;
+    padding-top: 200px;
+}
+
+
+#links{
+    display: flex;
+    padding-left: 38%;
+    list-style-type: none;
+    width: 250px;
+    
+}
+#links a:hover{
+  opacity: 0.8;   
+}
+
+#flooter{
+  padding: 2% 0% 0% 0%;
+  margin-top: 0;
+  text-align: center;
+}
+ .logo-flooter{
+  margin-bottom: 30px;
+  list-style-type: none;
+  float: none;
+}
+
+.flooter-line{
+  color:rgb(75, 75, 75);
+  margin-bottom: 0;
+  margin: 4% 20% 0 20%;
+}
+
+#follow{
+  display: block;
+  color: rgb(0, 0, 0);
+  text-align: center;
+  text-decoration: none;
+  margin: 0 8%;
+  font-size: 120%;
+}
+.all-quotes{
+  background-color: rgba(0, 0, 0, 0.37);
+  background-image: url("mot.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding: 200px;
+  margin-top: 5%;
+  margin-bottom: 5%;
+}
+.all-quotes2{
+  background-color: rgba(0, 0, 0, 0.37);
+  background-image: url("mot2.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding: 200px;
+  margin-top: 5%;
+  margin-bottom: 5%;
+}
+
+.quote-1{
+  color: white;
 }

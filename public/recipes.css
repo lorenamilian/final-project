@@ -82,8 +82,7 @@ p{
     color: honeydew;
     padding: 1%;
     border-radius: 20px;
-    background-color: rgb(107, 97, 97);
-    opacity: 0.7;
+    background-color: rgba(93, 129, 118, 0.438);
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
