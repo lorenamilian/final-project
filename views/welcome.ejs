@@ -8,34 +8,86 @@
     <title>Welcome</title>
 </head>
 <body>
-<div class="quote1">
+  <div class="quote1">
             
     
         <ul class="ul">  
             <form action="/goodbye" method="POST">
                <button type="submit">Sing Out</button>
-            </form>     
-                <li class="li"><a href="/recipes">Healthy Recipes</a></li>
-                <li class="li"><a href="#news">Being Active</a></li>
-                <li class="li"><a href="/singIn">Organic Places</a></li>
-                <li class="li"><a href="">Bad Habits</a></li>
+            </form>  
+                <li id="li"><a href="/recipes">Healthy Recipes</a></li>
+                <li id="li"><a href="">Being Active</a></li>
+                <li id="li"><a href="/singIn">Organic Places</a></li>
+                <li id="li"><a href="">Healthy Tips</a></li>
        </ul>     
-    <h2>Stat Changing Your Life Today</h2>
-</div>  
-</div> 
-  <div >
-      <img src="logo.png" alt="logo" class="logo">
-      <h2>Welcome Back, <%= name%></h2>
-    </div>
-
    
-    
-  <div class="quote2">
-      <h2>Delicious and Healthy Recipes That You Will Love</h2>
-  </div> 
+       
+       <h1 class="welcome">Welcome Back, <%= user.name%></h1>
+       <h2 class="h2">Start Changing Your Life Today</h2> 
+  <ul>
+    <li><a class="button" href="/recipes">Healthy Recipes</a></li>
+    <li><a class="button" href="/active">Being Active</a></li>
+​
+    <li><a class="button" href="">Organic Places</a></li>
+    <li><a class="button" href="">Healthy Tips</a></li>
+  </ul>
+</div>      
   
-  <div class="quote3">
-        <h2>Find The Insperation You Need</h2>
-  </div> 
+​
+  </div>
+​
+  <div class="all-quotes2">
+      <div class="quote2">
+          <h2>Delicious and Healthy Recipes That You Will Love</h2>
+      </div> 
+      
+      <div class="quote3">
+            <h2>Find The Insperation You Need</h2>
+      </div>
+    
+      </div>
+   <h2>My Creations</h2>
+  <div class="all-cards">      
+      
+      <div class="card">
+        <img src="card.jpg" alt="Avatar" style="width:100%">
+        <div class="container">
+          <h4><b>Recipe Name</b></h4> 
+          <p>Small description</p> 
+        </div>
+      </div>
+      <div class="card">
+          <img src="card.jpg" alt="Avatar" style="width:100%">
+          <div class="container">
+            <h4><b>Recipe Name</b></h4> 
+            <p>Small description</p> 
+          </div>
+        </div>
+        <div class="card">
+            <img src="card.jpg" alt="Avatar" style="width:100%">
+            <div class="container">
+              <h4><b>Recipe Name</b></h4> 
+              <p>Small description</p> 
+            </div>
+          </div>
+​
+</div>
+​
+<ul id="links">
+  <li><a href=""> <h3 class="icon-link" id="follow">Follow us..</h3></a></li>
+  <li><a href=""> <img src="instagram.png" alt="" class="icon-link"> </a></li>
+  <li><a href=""> <img src="twiter2.png" alt="" class="icon-link"> </a></li>
+  <li><a href=""> <img src="facebook.png" alt="" class="icon-link"> </a></li>
+​
+</ul>
+​
+<hr class="flooter-line">
+      
+            <div id="flooter" class="inform">
+                <h3>© 2019 placeholder Inc. All rights reserved.</h3>
+                <li id="logo" class="logo-flooter">Lorena's Style</li>  
+            </div>
+​
+​
 </body>
 </html>

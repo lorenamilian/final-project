@@ -38,7 +38,9 @@ passport.use(
           return done(null, false, { message: "Incorrect email" });
         } else {
           db.Users.create({
-           name: req.body.name,
+            name: req.body.name,
+            state: req.body.state,
+            city: req.body.city,
             email: email,
             password: password
           }).then(function(newUser) {

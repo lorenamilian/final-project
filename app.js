@@ -25,11 +25,6 @@ app.use(express.static("./public"));
 //routing manager
 app.use(routes);
 
-app.get('/recipes', function (req, res) {
-  res.render('recipes.ejs');
-  
-});
-
 db.sequelize.sync().then(function() {
   app.listen(3002, function(err) {
     if (err) console.log(err);
