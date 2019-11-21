@@ -97,3 +97,19 @@ p{
   text-decoration: none;
   text-emphasis: none;
 }
+#flooter{
+  padding: 2% 0% 0% 0%;
+  margin-top: 0;
+  text-align: center;
+}
+
+.flooter-line{
+  color:rgb(75, 75, 75);
+  margin-bottom: 0;
+  margin: 4% 20% 0 20%;
+}
+.logo-flooter{
+  margin-bottom: 30px;
+  list-style-type: none;
+  float: none;
+}

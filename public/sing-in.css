@@ -55,3 +55,18 @@ img{
     border: 2px solid #515151;
     box-shadow: 0 8px 14px 0 rgba(0, 0, 0, 0.2), 0 10px 10px 0 rgba(0, 0, 0, 0.19); 
 }   
+
+button{
+    padding: 8px 15px;
+    font-size: 15px;
+    background-color: rgba(119, 120, 130, 0.493);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    margin: 5px 20px 0px  ; 
+    
+     } 
+     button:hover{
+        background-color: rgba(106, 107, 117, 0.753);
+        color: rgb(255, 255, 255);
+      }

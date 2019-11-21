@@ -10,7 +10,7 @@ body{
 #header-page1{
   font-size: 38px;
   padding: 14px 0px;
-  color: #214d84;
+  color: #a823a8;
 }
 .title{
   text-shadow: 6px 6px 12px #000000;
@@ -49,7 +49,7 @@ body{
   } 
 
 .all-header{
-    background-image:url("workout.jpg");
+    background-image:url("bad2.jpg");
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -144,4 +144,4 @@ p{
     margin-bottom: 30px;
     list-style-type: none;
     float: none;
-  }  
+  }

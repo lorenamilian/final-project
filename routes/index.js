@@ -80,6 +80,13 @@ routes.post(
 routes.get("/profile", authenticate, function(req, res) {
   res.render("profile.ejs", { user: req.user });
 });
+routes.get("/active", authenticate, function(req, res) {
+  res.render("being-active.ejs", { user: req.user });
+});
+routes.get("/badhabits", authenticate, function(req, res) {
+  res.render("badhabits.ejs", { user: req.user });
+});
+
 
 // get logout
 routes.get("/logout", function(req, res) {
