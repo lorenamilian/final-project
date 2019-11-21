@@ -17,7 +17,7 @@ module.exports = function(sequelize, DataTypes) {
     ingredients: {
         type: DataTypes.STRING
       },
-    iamge: {
+    imge: {
     type: DataTypes.STRING
     },
     userID: {

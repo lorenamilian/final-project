@@ -20,22 +20,25 @@ routes.get("/", function(req, res) {
 routes.get("/recipes", function(req, res) {
   // query table recipes for all recipes
   db.Recipes.findAll({
-    attributes: ["name"]
+    attributes: ["name", "diet", "description", "ingredients", "imge", "userID"]
   }).then(function(results) {
     // console.log(results);
     res.render("recipes.ejs", { recipes: results });
   });
 });
-
 // POST recipes create
 routes.get("/recipes", function(req, res) {
   res.render("create-recipes.ejs");
 });
-
 // POST recipes create
 routes.post("/recipes", function(req, res) {
   db.Recipes.create({
-    // aaron code here
+    // aaron code here 
+    name: req.name.name,
+    diet: req.name.diet,
+    description: req.name.description,
+    ingredients: req.name.ingredients,
+    imge: req.name.imge,
     userID: req.user.id
   }).then(function(results) {
     // console.log(results);
