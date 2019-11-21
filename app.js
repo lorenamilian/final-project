@@ -1,52 +1,38 @@
-const express = require('express');
-const bodyParser = require('body-parser');
-const cookieParser = require('cookie-parser');
+const express = require("express");
+const bodyParser = require("body-parser");
+const db = require("./models/index.js"); // same ("./models")
+const routes = require("./routes");
+const passport = require("./config/passport");
+const session = require("express-session");
 
+//start express app
 const app = express();
-app.use(bodyParser.urlencoded({ extended: false}));
-app.use(cookieParser());
 
-app.set('view engine', 'ejs');
+// view engine
+app.set("view engine", "ejs");
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
+app.use(
+  session({ secret: "keyboard cat", resave: true, saveUninitialized: true })
+);
 
-//middleware
+app.use(passport.initialize());
+app.use(passport.session());
+
+// middeware
 app.use(express.static("./public"));
 
-app.get('/', (req, res) => {
-    const name = req.cookies.username;
-    if (name) {
-      res.render('welcome', { name });
-    } else {
-      res.redirect('/singIn');
-    }
-});
-
-app.get('/singIn', (req, res) => {
-  const name = req.cookies.username;
-  if (name) {
-    res.redirect('/');
-  } else {
-    res.render('sing-in');
-  }
-});
-
-app.post('/singIn', (req, res) => {
-  res.cookie('username', req.body.username);
-  res.redirect('/');
-});
-
-app.post('/goodbye', (req, res) => {
-  res.clearCookie('username');
-  res.redirect('/singIn');
-});
+//routing manager
+app.use(routes);
 
 app.get('/recipes', function (req, res) {
   res.render('recipes.ejs');
   
 });
-app.get('/forms', function (req, res) {
-  res.render('forms.ejs');
-});
 
-app.listen(3000, () => {
-   console.log('The application is running on localhost:3000!')
+db.sequelize.sync().then(function() {
+  app.listen(3002, function(err) {
+    if (err) console.log(err);
+    console.log("my server is running now");
+  });
 });
