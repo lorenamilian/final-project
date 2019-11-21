@@ -6,18 +6,14 @@ const authenticate = require("../config/middleware/isAuthenticated");
 
 //routs
 
-routes.get("/home", authenticate, function(req, res) {
+routes.get("/", function(req, res) {
   // console.log(req.user);
-  db.Tasks.findAll({
-    where: { userId: req.user.id }
-  }).then(function(results) {
-    res.render("welcome.ejs");
-  });
+    res.render("sing-in.ejs");
 });
 
 //routes: user
 //get login
-routes.get("/user/login", function(req, res) {
+routes.get("/login", function(req, res) {
   res.render("login.ejs");
 });
 
@@ -34,7 +30,7 @@ routes.get("/firth-page", function(req, res) {
   res.render("sing-in.ejs");
 });
 
-routes.get("/user/signup", function(req, res) {
+routes.get("/signup", function(req, res) {
   res.render("registration.ejs");
 });
 

@@ -1,8 +1,8 @@
 {
   "development": {
     "username": "admin",
-    "password": "2312",
-    "database": "tasker",
+    "password": "student",
+    "database": "better_life",
     "host": "127.0.0.1",
     "dialect": "mysql",
     "operatorsAliases": false
