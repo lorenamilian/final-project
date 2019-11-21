@@ -4,12 +4,24 @@ const routes = express.Router();
 const passport = require("../config/passport");
 const authenticate = require("../config/middleware/isAuthenticated");
 
-//routs
+//app routes
+
+routes.get("/welcome", function(req, res) {
+  // console.log(req.user);
+    res.render("welcome.ejs", {user: req.user});
+});
 
 routes.get("/", function(req, res) {
   // console.log(req.user);
     res.render("sing-in.ejs");
 });
+
+// recipes page
+app.get('/recipes', function (req, res) {
+  res.render('recipes.ejs');
+  
+});
+
 
 //routes: user
 //get login
@@ -21,8 +33,8 @@ routes.get("/login", function(req, res) {
 routes.post(
   "/user/login",
   passport.authenticate("local", {
-    successRedirect: "/home",
-    failureRedirect: "/user/login"
+    successRedirect: "/welcome",
+    failureRedirect: "/login"
   })
 );
 //sign up
@@ -39,7 +51,7 @@ routes.post(
   "/user/signup",
     passport.authenticate("local-signup", {
     successRedirect: "/home",
-    failureRedirect: "/user/login"
+    failureRedirect: "/login"
   })
 );
 
