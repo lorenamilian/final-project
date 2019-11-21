@@ -17,7 +17,7 @@ routes.get("/", function(req, res) {
 });
 
 // recipes page
-app.get('/recipes', function (req, res) {
+routes.get('/recipes', function (req, res) {
   res.render('recipes.ejs');
   
 });
@@ -50,7 +50,7 @@ routes.get("/signup", function(req, res) {
 routes.post(
   "/user/signup",
     passport.authenticate("local-signup", {
-    successRedirect: "/home",
+    successRedirect: "/welcome",
     failureRedirect: "/login"
   })
 );
