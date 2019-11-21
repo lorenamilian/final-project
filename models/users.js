@@ -20,7 +20,14 @@ module.exports = function(sequelize, DataTypes) {
     password: {
       type: DataTypes.STRING,
       allowNull: false
+    },
+    state: {
+      type: DataTypes.STRING
+    },
+    city: {
+      type: DataTypes.STRING
     }
+
   });
 
   //create custome methods for our Users
