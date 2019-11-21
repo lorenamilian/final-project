@@ -1,7 +1,7 @@
 {
   "development": {
     "username": "admin",
-    "password": "student",
+    "password": "2312",
     "database": "better_life",
     "host": "127.0.0.1",
     "dialect": "mysql",
