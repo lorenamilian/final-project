@@ -8,20 +8,40 @@ const authenticate = require("../config/middleware/isAuthenticated");
 
 routes.get("/welcome", function(req, res) {
   // console.log(req.user);
-    res.render("welcome.ejs", {user: req.user});
+  res.render("welcome.ejs", { user: req.user });
 });
 
 routes.get("/", function(req, res) {
   // console.log(req.user);
-    res.render("sing-in.ejs");
+  res.render("sing-in.ejs");
 });
 
 // recipes page
-routes.get('/recipes', function (req, res) {
-  res.render('recipes.ejs');
-  
+routes.get("/recipes", function(req, res) {
+  // query table recipes for all recipes
+  db.Recipes.findAll({
+    attributes: ["name"]
+  }).then(function(results) {
+    // console.log(results);
+    res.render("recipes.ejs", { recipes: results });
+  });
 });
 
+// POST recipes create
+routes.get("/recipes", function(req, res) {
+  res.render("create-recipes.ejs");
+});
+
+// POST recipes create
+routes.post("/recipes", function(req, res) {
+  db.Recipes.create({
+    // aaron code here
+    userID: req.user.id
+  }).then(function(results) {
+    // console.log(results);
+    res.redirect("/recipes");
+  });
+});
 
 //routes: user
 //get login
@@ -49,7 +69,7 @@ routes.get("/signup", function(req, res) {
 //post sign up
 routes.post(
   "/user/signup",
-    passport.authenticate("local-signup", {
+  passport.authenticate("local-signup", {
     successRedirect: "/welcome",
     failureRedirect: "/login"
   })
