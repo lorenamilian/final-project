@@ -26,7 +26,7 @@ app.use(express.static("./public"));
 app.use(routes);
 
 db.sequelize.sync().then(function() {
-  app.listen(3002, function(err) {
+  app.listen(3000, function(err) {
     if (err) console.log(err);
     console.log("my server is running now");
   });

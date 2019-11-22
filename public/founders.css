@@ -53,7 +53,7 @@ h1 {
 }
 
 img {
-  height: 250px;
+  max-height: 460px;
   width: auto;
 }
 #flooter {

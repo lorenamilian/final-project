@@ -89,9 +89,10 @@ p {
   padding: 4% 3%;
 }
 .recipes-list {
-  color: aliceblue;
+  color: rgb(0, 0, 0);
   text-decoration: none;
   text-emphasis: none;
+  font-size: 120%;
 }
 
 .card {
