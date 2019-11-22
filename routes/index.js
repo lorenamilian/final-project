@@ -6,9 +6,14 @@ const authenticate = require("../config/middleware/isAuthenticated");
 
 //app routes
 
-routes.get("/welcome", function(req, res) {
-  // console.log(req.user);
-  res.render("welcome.ejs", { user: req.user });
+routes.get("/welcome", authenticate, function(req, res) {
+  // query table recipes for all recipes
+  db.Recipes.findAll({
+    where: { userId: req.user.id }
+  }).then(function(results) {
+    console.log(results);
+    res.render("welcome.ejs", { recipes: results, user: req.user });
+  });
 });
 
 routes.get("/", function(req, res) {
@@ -27,18 +32,18 @@ routes.get("/recipes", function(req, res) {
   });
 });
 // POST recipes create
-routes.get("/recipes", function(req, res) {
+routes.get("/create-recipes", function(req, res) {
   res.render("create-recipes.ejs");
 });
 // POST recipes create
-routes.post("/recipes", function(req, res) {
+routes.post("/create-recipes", authenticate, function(req, res) {
   db.Recipes.create({
-    // aaron code here 
-    name: req.name.name,
-    diet: req.name.diet,
-    description: req.name.description,
-    ingredients: req.name.ingredients,
-    imge: req.name.imge,
+    // aaron code here
+    name: req.body.name,
+    diet: req.body.diet,
+    description: req.body.description,
+    ingredients: req.body.ingredients,
+    imge: req.body.imge,
     userID: req.user.id
   }).then(function(results) {
     // console.log(results);
@@ -89,12 +94,24 @@ routes.get("/active", authenticate, function(req, res) {
 routes.get("/badhabits", authenticate, function(req, res) {
   res.render("badhabits.ejs", { user: req.user });
 });
+routes.get("/badhabits", authenticate, function(req, res) {
+  res.render("badhabits.ejs", { user: req.user });
+});
 
+routes.get("/map", function(req, res) {
+  // console.log(req.user);
+  res.render("map.ejs");
+});
+
+routes.get("/restaurants", function(req, res) {
+  // console.log(req.user);
+  res.render("restaurants.ejs");
+});
 
 // get logout
 routes.get("/logout", function(req, res) {
   req.logout();
-  res.redirect("/home");
+  res.redirect("/firth-page");
 });
 
 module.exports = routes;

@@ -1,75 +1,47 @@
 <!DOCTYPE html>
-    <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <link rel="stylesheet" href="sing-in.css">
-        <title>Document</title>
-        
-    
-    </head>
-    <body>
-    
-     <div class="container">
-        <img src="/sing-inl.png" alt="">
-        <h1 class="title">Register</h1>
-  <form action="/user/signup" method="POST">
-    
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="sing-in.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="container">
+      <img src="/sing-inl.png" alt="" />
+      <h1 class="title">Register</h1>
+      <form action="/user/signup" method="POST">
         <input
-                name="name"
-                type="text"
-                class="form-control"
-                class="input"
-                placeholder="enter name"
-              /><br>
-
-        <input
-                name="email"
-                type="email"
-                class="form-control"
-                class="input"
-                placeholder="Email"
-        /> <br>
-
-            
-        <input
-                type="password"
-                name="password"
-                class="form-control"
-                class="input"
-                placeholder="Password"
-        /><br>
-        <input
-                name="state"
-                type="text"
-                class="form-control"
-                class="input"
-                placeholder="Email"
-        /> 
-        <input
-          name="city"
+          name="name"
           type="text"
-          class="form-control"
+          placeholder="enter name"
           class="input"
-          placeholder="Email"
-/> <br>
-      
-         <button type="submit" class="button" class="btn btn-default">Sign Up</button>
- 
-  
-          
-              
-            
-            
-              
+        /><br />
+
+        <input name="email" type="email" placeholder="Email" class="input" />
+        <br />
+
+        <input
+          type="password"
+          name="password"
+          placeholder="Password"
+          class="input"
+        /><br />
+        <input name="state" type="text" placeholder="State" class="input" />
+        <br />
+        <input name="city" type="text" placeholder="City" class="input" />
+        <br />
+
+        <button type="submit" class="button">
+          Sign Up
+        </button>
+
+        <div class="all-Or">
+          <p>Or log in <a class="or" href="/login">here</a></p>
+        </div>
       </form>
-  </div>
-        
-           
-        
-          <p>Or log in <a href="/user/login">here</a></p>
-       
+    </div>
   </body>
   ​
 </html>

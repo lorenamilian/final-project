@@ -1,5 +1,5 @@
 body {
-  background-image: url("sing-in.jpg");
+  background-image: url("main.jpg");
   background-position: center;
   background-size: cover;
   background-attachment: fixed;
@@ -24,7 +24,7 @@ img {
   font-family: "Open Sans", sans-serif;
   border: none;
   outline: none;
-  background-color: rgba(184, 229, 249, 0.746);
+  background-color: rgb(184, 229, 249);
   border-bottom: 1px solid rgb(170, 170, 170);
   color: rgb(32, 32, 32);
   font-size: 120%;
@@ -32,7 +32,7 @@ img {
 
 .input:focus {
   border-bottom: 1px solid rgb(100, 100, 100);
-  background-color: rgba(184, 229, 249, 0.746);
+  background-color: rgb(184, 229, 249);
 }
 
 .button {

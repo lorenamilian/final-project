@@ -11,13 +11,10 @@
   <div class="quote1">
             
     
-        <ul class="ul">  
-            <form action="/goodbye" method="POST">
-               <button type="submit">Sign Out</button>
-            </form>  
-                <li id="li"><a href="/recipes">Founders</a></li>
-                <li id="li"><a href=""></a></li>
-                <li id="li"><a href="/singIn"></a></li>
+        <ul class="ul">   
+                <li id="li"><a href="/AboutUs">Founders</a></li>
+                <li id="li"><a href="/"></a></li>
+                <li id="li"><a href="/logout">Sing Out</a></li>
                
        </ul>     
    
@@ -27,14 +24,17 @@
   <ul>
     <li><a class="button" href="/recipes">Healthy Recipes</a></li>
     <li><a class="button" href="/active">Being Active</a></li>
-​
-    <li><a class="button" href="">Organic Places</a></li>
-    <li><a class="button" href="/badhabits">Healthy Tips</a></li>
+    <li><a class="button" href="/map">Organic Places</a></li>
+    <li><a class="button" href="/badhabits">Bad Habits to Change</a></li>
   </ul>
 </div>      
   
 ​
   </div>
+
+
+
+  
 ​
   <div class="all-quotes2">
       <div class="quote2">
@@ -47,30 +47,21 @@
     
       </div>
    <h2>My Creations</h2>
-  <div class="all-cards">      
-      
+
+   
+   <div class="all-cards">   
+     <% if(recipes.length > 0) {%>
+      <% for(let i=0; i< recipes.length ;i++) {%>
       <div class="card">
-        <img src="card.jpg" alt="Avatar" style="width:100%">
+        <img src="<%= recipes[i].imge %>" alt="Avatar" style="width:100%">
         <div class="container">
-          <h4><b>Recipe Name</b></h4> 
-          <p>Small description</p> 
+        
+          <h4><b><%= recipes[i].name %></b></h4> 
+          <p><%= recipes[i].name %></p> 
         </div>
       </div>
-      <div class="card">
-          <img src="card.jpg" alt="Avatar" style="width:100%">
-          <div class="container">
-            <h4><b>Recipe Name</b></h4> 
-            <p>Small description</p> 
-          </div>
-        </div>
-        <div class="card">
-            <img src="card.jpg" alt="Avatar" style="width:100%">
-            <div class="container">
-              <h4><b>Recipe Name</b></h4> 
-              <p>Small description</p> 
-            </div>
-          </div>
-​
+      <% } %>
+      <% } %>
 </div>
 ​
 <ul id="links">
@@ -83,10 +74,10 @@
 ​
 <hr class="flooter-line">
       
-            <div id="flooter" class="inform">
+          <div id="flooter" class="inform">
                 <h3>© 2019 placeholder Inc. All rights reserved.</h3>
                 <li id="logo" class="logo-flooter">CARL Developer</li>  
-            </div>
+          </div>
 ​
 ​
 </body>

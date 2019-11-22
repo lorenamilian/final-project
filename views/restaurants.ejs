@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="/css/nav-bar.css" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="/css/home.css" />
+    <title>More Muralz | Home</title>
+    <style>
+      /* Always set the map height explicitly to define the size of the div
+         * element that contains the map. */
+      #map {
+        height: 400px;
+        width: 100%;
+      }
+      /* Optional: Makes the sample page fill the window. */
+      html,
+      body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+  </head>
+  <body id="home-img">
+    <div class="container">
+      <nav class="navbar navbar-expand-sm navbar-light bg-light">
+        <a class="navbar-brand"><h1 class="stong">Home</h1></a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarNavAltMarkup"
+          aria-controls="navbarNavAltMarkup"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="nav-bar">
+          <div class="navbar-nav">
+            <a class="nav-item nav-link active" href="/login"
+              >Login<span class="sr-only">(current)</span></a
+            >
+          </div>
+          <div class="navbar-nav">
+            <a class="nav-item nav-link active" href="/register"
+              >Register<span class="sr-only">(current)</span></a
+            >
+          </div>
+          <div class="navbar-nav">
+            <a class="nav-item nav-link active" href="/user/addSpot"
+              >Add Spot<span class="sr-only">(current)</span></a
+            >
+          </div>
+        </div>
+      </nav>
+      <div id="map-input">
+        <form action="">
+          <div class="input-group mb-3 d-flex justify-content-center mt-5">
+            <input
+              id="loc-input"
+              type="text"
+              class="mr-sm-2"
+              placeholder="Location..."
+              type="search"
+            />
+            <div class="input-group-append">
+              <button class="btn btn-outline-secondary bg-white" type="button">
+                Submit
+              </button>
+            </div>
+          </div>
+        </form>
+        <a href=""></a>
+        <div id="map"></div>
+        <script>
+          var map;
+          function initMap() {
+            // The map, centered at Uluru
+            var map = new google.maps.Map(document.getElementById("map"), {
+              zoom: 13,
+              // center: { lat: 27.664827, lng: -81.515755 }
+              // us center
+              center: { lat: 25.77482, lng: -80.198914 }
+            });
+            // Lott 11 marker ********************************************
+            var infowindowlot11 = new google.maps.InfoWindow({
+              content:
+                '<a href="https://www.purpleorchidmiami.com/" target=_blank>' +
+                "<h1>Purple Orchid</h1>" +
+                "</a>" +
+                "<p> Cheerful local outpost for smoothies, juices & health-oriented wraps, salads, açai bowls & more.</p>" +
+                '<img src="data:image/jpeg;base64,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" alt="">'
+            });
+            // The marker spots
+            var Lot11Marker = new google.maps.Marker({
+              position: { lat: 25.77307, lng: -80.18792 },
+              map: map
+            });
+            Lot11Marker.addListener("click", function() {
+              infowindowlot11.open(map, Lot11Marker);
+            });
+            // *************************************************************
+            // TF305 marker ********************************************
+            var infowindowTF305 = new google.maps.InfoWindow({
+              content:
+                '<a href="casablancaseafood.com">' +
+                "<h1>Seaspice</h1>" +
+                "</a>" +
+                "<p> Chic spot with an outdoor patio, globally influenced seafood an adjacent hot-stone & crudo lounge.</p>" +
+                "<p>400 NW N River Dr, Miami, FL 33128</p>" +
+                '<img src="https://lh5.googleusercontent.com/p/AF1QipMdbcrSVl-hbjPvYJ7opjtQ-dtxh6Vh5cpHd2cK=w426-h240-k-no" alt="">'
+            });
+            // The marker spots
+            var TF305Marker = new google.maps.Marker({
+              position: { lat: 28.06907, lng: -97.96088 },
+              map: map
+            });
+            TF305Marker.addListener("click", function() {
+              infowindowTF305.open(map, TF305Marker);
+            });
+            // *************************************************************
+            // Skatepark marker ********************************************
+            var infowindowSkatepark = new google.maps.InfoWindow({
+              content:
+                '<a href="/user/spot/3">' +
+                "<h1>Skate Park</h1>" +
+                "</a>" +
+                "<p> Description of the spot</p>" +
+                "<p>Best times: 5 pm</p>" +
+                '<img src="https://lh5.googleusercontent.com/p/AF1QipOxjjY-RuHBNqKccLR7nBLM2MlMPYyKxidkjeVA=w408-h272-k-no" alt="">'
+            });
+            // The marker spots
+            var SkateparkMarker = new google.maps.Marker({
+              position: { lat: 25.79292, lng: -80.135301 },
+              map: map
+            });
+            SkateparkMarker.addListener("click", function() {
+              infowindowSkatepark.open(map, SkateparkMarker);
+            });
+            // *************************************************************
+            // North Beach Public Skate Park marker ********************************************
+            var infowindowNorthbeachpublicskatepark = new google.maps.InfoWindow(
+              {
+                content:
+                  '<a href="/user/spot/4">' +
+                  "<h1>North Beach Public Skate Park</h1>" +
+                  "</a>" +
+                  "<p> Description of the spot</p>" +
+                  "<p>Best times: 11-3:30 pm</p>" +
+                  '<img src="https://lh5.googleusercontent.com/p/AF1QipO7K-2yWkA9KLLWWHuja2TxaY76ZcM9kB1KVhpL=w521-h240-k-no" alt="">'
+              }
+            );
+            // The marker spots
+            var NorthBeachSkateparkMarker = new google.maps.Marker({
+              position: { lat: 25.866988, lng: -80.1216 },
+              map: map
+            });
+            NorthBeachSkateparkMarker.addListener("click", function() {
+              infowindowNorthbeachpublicskatepark.open(
+                map,
+                NorthBeachSkateparkMarker
+              );
+            });
+            // *************************************************************
+            // Kendall Indian Hammocks Skate Park marker ********************************************
+            var infowindowKendallIndianSkatePark = new google.maps.InfoWindow({
+              content:
+                '<a href="/user/spot/5">' +
+                "<h1>Kendall Indian Hammocks Skate Park</h1>" +
+                "</a>" +
+                "<p> Description of the spot</p>" +
+                "<p>Best times: 4-5:30 pm</p>" +
+                '<img src="https://lh5.googleusercontent.com/p/AF1QipM7cwbBh8uutRwYXbTJEyUBh18NvEZ_zewPjpFo=w408-h306-k-no" alt="">'
+            });
+            // The marker spots
+            var KendallIndianSkateparkMarker = new google.maps.Marker({
+              position: { lat: 25.694726, lng: -80.377536 },
+              map: map
+            });
+            KendallIndianSkateparkMarker.addListener("click", function() {
+              infowindowKendallIndianSkatePark.open(
+                map,
+                KendallIndianSkateparkMarker
+              );
+            });
+            // *************************************************************
+            // TF305 marker ********************************************
+            var infowindowTF305 = new google.maps.InfoWindow({
+              content:
+                '<a href="/user/spot/2">' +
+                "<h1>TF305</h1>" +
+                "<p> description of the spot</p>" +
+                "<p>Best times: 7:30 pm</p>" +
+                '<img src="https://lh5.googleusercontent.com/p/AF1QipMdbcrSVl-hbjPvYJ7opjtQ-dtxh6Vh5cpHd2cK=w426-h240-k-no" alt="">' +
+                "</a>"
+            });
+            // The marker spots
+            var TF305Marker = new google.maps.Marker({
+              position: { lat: 25.822741, lng: -80.254662 },
+              map: map
+            });
+            TF305Marker.addListener("click", function() {
+              infowindowTF305.open(map, TF305Marker);
+            });
+            // *************************************************************
+            // Skatepark marker ********************************************
+            var infowindowSkatepark = new google.maps.InfoWindow({
+              content:
+                '<a href="/user/spot/3">' +
+                "<h1>Skate Park</h1>" +
+                "<p> description of the spot</p>" +
+                "<p>Best times: 5 pm</p>" +
+                '<img src="https://lh5.googleusercontent.com/p/AF1QipOxjjY-RuHBNqKccLR7nBLM2MlMPYyKxidkjeVA=w408-h272-k-no" alt="">' +
+                "</a>"
+            });
+            // The marker spots
+            var SkateparkMarker = new google.maps.Marker({
+              position: { lat: 25.79292, lng: -80.135301 },
+              map: map
+            });
+            SkateparkMarker.addListener("click", function() {
+              infowindowSkatepark.open(map, SkateparkMarker);
+            });
+            // *************************************************************
+            // North Beach Public Skate Park marker ********************************************
+            var infowindowNorthbeachpublicskatepark = new google.maps.InfoWindow(
+              {
+                content:
+                  '<a href="/user/spot/4">' +
+                  "<h1>North Beach Public Skate Park</h1>" +
+                  "<p> description of the spot</p>" +
+                  "<p>Best times: 11-3:30 pm</p>" +
+                  '<img src="https://lh5.googleusercontent.com/p/AF1QipO7K-2yWkA9KLLWWHuja2TxaY76ZcM9kB1KVhpL=w521-h240-k-no" alt="">' +
+                  "</a>"
+              }
+            );
+            // The marker spots
+            var NorthBeachSkateparkMarker = new google.maps.Marker({
+              position: { lat: 25.866988, lng: -80.1216 },
+              map: map
+            });
+            NorthBeachSkateparkMarker.addListener("click", function() {
+              infowindowNorthbeachpublicskatepark.open(
+                map,
+                NorthBeachSkateparkMarker
+              );
+            });
+            // *************************************************************
+            // Kendall Indian Hammocks Skate Park marker ********************************************
+            var infowindowKendallIndianSkatePark = new google.maps.InfoWindow({
+              content:
+                '<a href="/user/spot/5">' +
+                "<h1>Kendall Indian Hammocks Skate Park</h1>" +
+                "<p> description of the spot</p>" +
+                "<p>Best times: 4-5:30 pm</p>" +
+                '<img src="https://lh5.googleusercontent.com/p/AF1QipM7cwbBh8uutRwYXbTJEyUBh18NvEZ_zewPjpFo=w408-h306-k-no" alt="">' +
+                "</a>"
+            });
+            // The marker spots
+            var KendallIndianSkateparkMarker = new google.maps.Marker({
+              position: { lat: 25.694726, lng: -80.377536 },
+              map: map
+            });
+            KendallIndianSkateparkMarker.addListener("click", function() {
+              infowindowKendallIndianSkatePark.open(
+                map,
+                KendallIndianSkateparkMarker
+              );
+            });
+            // *************************************************************
+          }
+        </script>
+        <script
+          src="https://maps.googleapis.com/maps/api/js?key=&callback=initMap"
+          async
+          defer
+        ></script>
+      </div>
+    </div>
+  </body>
+</html>
