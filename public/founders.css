@@ -1,0 +1,99 @@
+body {
+  background-image: url("b.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+  color: azure;
+  margin: 20px 50px;
+  font-family: "IBM Plex Sans", sans-serif;
+}
+
+#logo {
+  font-size: 40px;
+  font-family: "La Belle Aurore", cursive;
+  font-family: "Allura", cursive;
+  font-family: "Parisienne", cursive;
+}
+
+h1 {
+  padding: 25px 50px;
+}
+
+.card {
+  float: left;
+}
+
+.card {
+  /* Add shadows to create the "card" effect */
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+  width: 400px;
+  background-color: rgb(255, 255, 255);
+  color: rgb(73, 73, 73);
+  margin-right: 50px;
+  padding: 7px;
+}
+
+/* On mouse-over, add a deeper shadow */
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+/* Add some padding inside the card container */
+.container {
+  padding: 2px 16px;
+}
+
+.test {
+  padding: 40px;
+}
+.hr {
+  margin-left: 450px;
+}
+
+img {
+  height: 250px;
+  width: auto;
+}
+#flooter {
+  padding: 2% 0% 0% 0%;
+  margin-top: 5%;
+  text-align: center;
+}
+.logo-flooter {
+  margin-bottom: 30px;
+  list-style-type: none;
+  float: none;
+}
+
+.flooter-line {
+  border: 0.4px solid rgb(255, 255, 255);
+  margin-bottom: 0;
+  margin: 10% 20% 0 20%;
+}
+
+.ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: rgb(172, 223, 212);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.li {
+  float: right;
+}
+
+.li a {
+  display: block;
+  color: rgb(53, 53, 53);
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.li a:hover:not(.active) {
+  background-color: #a6c2b2;
+}

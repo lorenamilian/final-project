@@ -15,13 +15,13 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.STRING
     },
     ingredients: {
-        type: DataTypes.STRING
-      },
+      type: DataTypes.STRING
+    },
     imge: {
-    type: DataTypes.STRING
+      type: DataTypes.STRING
     },
     userID: {
-        type: DataTypes.STRING
+      type: DataTypes.STRING
     }
   });
   return Recipes;

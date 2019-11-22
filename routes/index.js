@@ -107,6 +107,10 @@ routes.get("/restaurants", function(req, res) {
   // console.log(req.user);
   res.render("restaurants.ejs");
 });
+routes.get("/founders", function(req, res) {
+  // console.log(req.user);
+  res.render("founders.ejs");
+});
 
 // get logout
 routes.get("/logout", function(req, res) {
